@@ -1,11 +1,8 @@
 Task 2.
 
+Feature: Searching for informations about Prowly Media Monitoring module by using Copilot in bing.com browser
 
-
-
-Feature: Searching for Prowly Media Monitoring information by using Copilot in bing.com browser
-
-Scenario: Searching for information in Balanced mode
+Scenario: Searching for informations in Balanced mode
 
 Background: Given a User has Copilot module opened, set on Balanced mode
 
@@ -25,6 +22,27 @@ TC3: Clicking on the links in the answer
 When a User clicks on one of the links in generated text
 Then the source page is opened in the new tab
 
+Scenario: Searching for informations in the Precise mode
+
+Background: Given a User has Copilot module opened, set on Precise mode
+
+TC1: Searching for informations in the Precise mode by entering a simple phrase
+
+When a User enters a simple phrase in the search bar
+And clicks Search icon
+Then precise answer with links and additional questions are live-generated
+
+TC2: Searching for informations in the Precise mode by entering more complex phrase
+
+When a User enters several questions in the search bar
+And clicks Search icon
+Then answer with more informations is live-generated
+
+TC3: Putting informations in the table
+
+When a User „ask” Copilot to put all the informations in the table
+And clicks Search icon
+Then the informations are put in the table or several tables
 
 
 
