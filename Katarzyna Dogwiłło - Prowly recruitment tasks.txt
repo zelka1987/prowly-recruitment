@@ -50,3 +50,28 @@ When a User enters the „Prowly Media Monitoring” phrase in the search bar on the
 And clicks Search button
 And switches to Images tab
 Then proper search results are displayed in form of images
+
+Scenario: Switching to the other tabs during searching
+
+Background: Given a User has bing.com browser opened
+
+TC1. Switching tabs after searching
+
+When a User enters the „Prowly Media Monitoring” phrase in the search bar
+And clicks Search button
+      And clicks on the News tab
+      And clicks on the Images tab
+      And clicks on the Videos tab
+Then proper search results are displayed
+
+TC2. Switching to the Maps tab
+
+When a User enters „Prowly Media Monitoring” phrase in the search bar
+And clicks Search button
+And switch to the Maps tab
+Then map is displayed with no results for the phrase
+
+TC3. Switching to the Shopping tab
+
+When a User switches tabs from Videos to Shopping
+Then tiles with shopping products are displayed instead of proper results
