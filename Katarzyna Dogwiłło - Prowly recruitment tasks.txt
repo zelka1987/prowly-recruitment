@@ -4,4 +4,49 @@ Task 1.
 
 Feature: Searching for the „Prowly Media Monitoring” phrase on bing.com browser page, filtrating by categories
 
+Scenario: Searching for the phrase from the main page level
 
+Background: Given a User has bing.com browser opened
+
+TC1: Searching from the main page level without logging in
+
+When a User enters the „Prowly Media Monitoring” phrase in the search bar
+And clicks Search button
+Then proper search results are displayed
+
+TC2: Searching from the main page level after logging in
+
+When a User logs in to the bing.com browser
+And enters the „Prowly Media Monitoring” phrase in the search bar
+And clicks Search button
+Then proper search results are displayed
+
+TC3. Deleting search value
+
+When a User deletes search value from the search bar
+Then search results are still displayed
+
+Scenario: Searching for the phrase in Images tab
+
+Background: Given a User has bing.com browser opened
+
+TC1. Searching for images
+
+When a User clicks on Images tab on the main page
+And enters the „Prowly Media Monitoring” phrase in the search bar
+And clicks Search button
+Then proper search results are displayed in form of images
+
+TC2. Searching for images by using on-screen keybord
+
+When a User openes on-screen keybord in the browser by clicking the icon on the search bar
+And enters „Prowly Media Monitoring” phrase
+And clicks Enter button on the on-screen keybord or Search button
+Then proper search results are displayed
+
+TC3. Displaying images results after switching tabs
+
+When a User enters the „Prowly Media Monitoring” phrase in the search bar on the Search tab
+And clicks Search button
+And switches to Images tab
+Then proper search results are displayed in form of images
